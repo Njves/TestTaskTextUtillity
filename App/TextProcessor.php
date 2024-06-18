@@ -14,12 +14,10 @@ class TextProcessor {
         $files = glob($this->textsDir . "/{$userId}-*.txt");
         $totalLines = 0;
         $fileCount = count($files);
-
         foreach ($files as $file) {
             $lines = file($file, FILE_IGNORE_NEW_LINES);
             $totalLines += count($lines);
         }
-
         return $fileCount > 0 ? $totalLines / $fileCount : 0;
     }
 
